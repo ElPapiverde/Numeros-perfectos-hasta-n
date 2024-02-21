@@ -1,0 +1,30 @@
+def es_perfecto(numero):
+  """
+  Función que verifica si un número es perfecto.
+
+  Parámetros:
+    numero: El número a verificar.
+
+  Retorno:
+    True si el número es perfecto, False si no lo es.
+  """
+  suma_divisores = 0
+  for divisor in range(1, numero):
+    if numero % divisor == 0:
+      suma_divisores += divisor
+  return suma_divisores == numero
+
+def imprimir_numeros_perfectos(n):
+  """
+  Función que imprime todos los números perfectos hasta N.
+
+  Parámetros:
+    n: El número límite.
+  """
+  for numero in range(2, n + 1):
+    if es_perfecto(numero):
+      print(numero)
+
+n = int(input("Introduzca el número límite: "))
+
+imprimir_numeros_perfectos(n)
